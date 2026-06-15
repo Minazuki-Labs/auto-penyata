@@ -1,0 +1,51 @@
+name: macOS Release Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.0'
+          host: 'mac'
+          target: 'desktop'
+
+      - name: Configure CMake
+        run: |
+          cmake -B build -S . \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DQT_VERSION_MAJOR=6
+
+      - name: Build Project
+        run: cmake --build build --config Release
+
+      - name: Deploy Qt Dependencies
+        run: |
+          # macdeployqt copies the plugins and frameworks inside "Auto Penyata.app"
+          macdeployqt "build/Auto Penyata.app" -verbose=1
+
+      - name: Zip App Bundle
+        run: |
+          # macOS apps must be zipped to preserve symlinks and internal permissions
+          cd build
+          zip -r Auto-Penyata-Mac.zip "Auto Penyata.app"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Auto-Penyata-Mac
+          path: build/Auto-Penyata-Mac.zip
