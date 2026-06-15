@@ -1,6 +1,6 @@
-#include "ekuitipemilik.h"
-#include "blockmanager.h"
-#include "jsonmanager.h"
+#include "header/ekuitipemilik.h"
+#include "header/blockmanager.h"
+#include "header/jsonmanager.h"
 
 EkuitiPemilik::EkuitiPemilik(Ui::MainWindow *m_ui, QObject *parent, StatusBar* statusBar)
     : PageManager(m_ui, parent, std::make_unique<BlockManager>(nullptr))

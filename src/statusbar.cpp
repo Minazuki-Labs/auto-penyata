@@ -1,5 +1,5 @@
-#include "statusbar.h"
-#include "jsonmanager.h"
+#include "header/statusbar.h"
+#include "header/jsonmanager.h"
 
 StatusBar::StatusBar(Ui::MainWindow *ui, QObject *parent)
     : QObject(parent),

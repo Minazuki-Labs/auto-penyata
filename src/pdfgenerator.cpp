@@ -1,4 +1,4 @@
-#include "pdfgenerator.h"
+#include "header/pdfgenerator.h"
 
 #include <QMap>
 #include <QVariant>

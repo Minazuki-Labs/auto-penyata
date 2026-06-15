@@ -1,6 +1,6 @@
-#include "pagemanager.h"
-#include "jsonmanager.h"
-#include "blockmanager.h"
+#include "header/pagemanager.h"
+#include "header/jsonmanager.h"
+#include "header/blockmanager.h"
 
 PageManager::PageManager(Ui::MainWindow *ui, QObject *parent, std::unique_ptr<BlockManager> blockManager)
     : QObject(parent),

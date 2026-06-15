@@ -1,4 +1,4 @@
-#include "blockmanager.h"
+#include "header/blockmanager.h"
 
 #include <QScrollArea>
 #include <QVBoxLayout>
@@ -40,25 +40,29 @@ void BlockManager::createAccountBlocks(const QVariantMap &variantMap, QStringLis
     QSet<QString> processedKeys;
     for (const QString &key : desiredOrder)
     {
+        processedKeys.insert(key);
+        double doubleValue = 0.00; // Default value
+
         if (variantMap.contains(key))
         {
-            processedKeys.insert(key);
             const QVariant value = variantMap.value(key);
-
+            
             // Check if it can be converted to a double
-            if (value.canConvert<double>()) {
-                double doubleValue = value.toDouble();
-
-                // Format the value to 2 decimal places
-                QString formattedValue = QString::asprintf("%.02f", doubleValue);
-
-                // Use the standard block creation
-                QWidget *block = createBasicBlock(key, formattedValue);
-                mainLayout->addWidget(block);
+            bool ok = false;
+            double parsedValue = value.toDouble(&ok);
+            if (ok) {
+                doubleValue = parsedValue;
             } else {
-                qWarning() << "Key" << key << "has a non-numeric value or could not be converted, skipping.";
+                qWarning() << "Key" << key << "has a value that couldn't be parsed as double. Defaulting to 0.00.";
             }
         }
+
+        // Format the value to 2 decimal places
+        QString formattedValue = QString::asprintf("%.02f", doubleValue);
+
+        // Use the standard block creation
+        QWidget *block = createBasicBlock(key, formattedValue);
+        mainLayout->addWidget(block);
     }
 
     for (const QString &key : variantMap.keys()) {

@@ -1,6 +1,6 @@
-#include "apur.h"
-#include "blockmanager.h"
-#include "jsonmanager.h"
+#include "header/apur.h"
+#include "header/blockmanager.h"
+#include "header/jsonmanager.h"
 
 Apur::Apur(Ui::MainWindow *m_ui, QObject *parent, StatusBar* statusBar) 
     : PageManager(m_ui, parent, std::make_unique<BlockManager>(nullptr))

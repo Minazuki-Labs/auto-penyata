@@ -1,6 +1,6 @@
-#include "setting.h"
-#include "jsonmanager.h"
-#include "statusbar.h"
+#include "header/setting.h"
+#include "header/jsonmanager.h"
+#include "header/statusbar.h"
 
 Setting::Setting(Ui::MainWindow *m_ui, QObject *parent, StatusBar* statusBar)
     : PageManager(m_ui, parent)

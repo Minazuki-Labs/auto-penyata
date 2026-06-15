@@ -1,6 +1,6 @@
-#include "asetsemasa.h"
-#include "blockmanager.h"
-#include "jsonmanager.h"
+#include "header/asetsemasa.h"
+#include "header/blockmanager.h"
+#include "header/jsonmanager.h"
 
 AsetSemasa::AsetSemasa(Ui::MainWindow *m_ui, QObject *parent, StatusBar* statusBar) 
     : PageManager(m_ui, parent, std::make_unique<BlockManager>(nullptr))

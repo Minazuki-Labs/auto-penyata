@@ -1,6 +1,6 @@
-#include "mainwindow.h"
+#include "header/mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "jsonmanager.h"
+#include "header/jsonmanager.h"
 
 #include <QCloseEvent>
 #include <QMessageBox>

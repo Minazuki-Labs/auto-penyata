@@ -1,6 +1,6 @@
-#include "hasil.h"
-#include "blockmanager.h"
-#include "jsonmanager.h"
+#include "header/hasil.h"
+#include "header/blockmanager.h"
+#include "header/jsonmanager.h"
 
 Hasil::Hasil(Ui::MainWindow *m_ui, QObject *parent, StatusBar* statusBar)
     : PageManager(m_ui, parent, std::make_unique<BlockManager>(nullptr))

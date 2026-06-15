@@ -1,6 +1,6 @@
-#include "belanja.h"
-#include "blockmanager.h"
-#include "jsonmanager.h"
+#include "header/belanja.h"
+#include "header/blockmanager.h"
+#include "header/jsonmanager.h"
 
 Belanja::Belanja(Ui::MainWindow *m_ui, QObject *parent, StatusBar* statusBar)
     : PageManager(m_ui, parent, std::make_unique<BlockManager>(nullptr))
