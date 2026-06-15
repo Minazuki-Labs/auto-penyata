@@ -51,9 +51,9 @@ These statements can then be exported as a clean, professional PDF file.
 
 This is the easiest way to install. Click on your computer operating system below:
 
-[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/JuneMinazuki/auto-penyata/releases/download/v1.0/AutoPenyata-MacOS.dmg)
-[![Source Tarball](https://img.shields.io/badge/-Source_tar-green.svg?style=for-the-badge)](https://github.com/JuneMinazuki/auto-penyata/archive/refs/tags/v1.0.tar.gz)
-[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/JuneMinazuki/auto-penyata/releases/download/v1.0/Auto-Penyata-Windows.zip)
+[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/JuneMinazuki/auto-penyata/releases/download/v1.0.1/AutoPenyata-MacOS.dmg)
+[![Source Tarball](https://img.shields.io/badge/-Source_tar-green.svg?style=for-the-badge)](https://github.com/JuneMinazuki/auto-penyata/archive/refs/tags/v1.0.1.tar.gz)
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/JuneMinazuki/auto-penyata/releases/download/v1.0.1/AutoPenyata-Windows.zip)
 
 1. Go to the Releases page of this repository.
 2. Find the latest release, which is `v1.0`.
